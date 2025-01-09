@@ -1,5 +1,7 @@
 package bancozup.conta;
 
+import bancozup.validador.Validador;
+
 import java.util.Random;
 
 public abstract class Conta {
@@ -9,6 +11,9 @@ public abstract class Conta {
     private double saldo;
 
     public Conta(String titular, String cpf) {
+        if (!Validador.validarCPF(cpf)) {
+            throw new IllegalArgumentException("CPF inválido.");
+        }
         this.numeroConta = gerarNumeroConta();
         this.titular = titular;
         this.cpf = cpf;

@@ -10,7 +10,6 @@ public class Validador {
     }
 
     public static boolean validarCPF(String cpf) {
-        // Implementar validação de CPF
         return cpf.matches("\\d{11}");
     }
 }
